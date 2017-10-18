@@ -30,14 +30,21 @@ if (!is_null($events['events'])) {
 				$a1 = 0;
 				$messages = [
 				'type' => 'text',
-				'text' => '$text'
+				'text' => $text
 			];
 			}
 			if ( $text == 'หมูฝอย' && $a1 == 0){
 				$a1 = 1;
 				$messages = [
 				'type' => 'text',
-				'text' => 'เอากี่กล่อง'
+				'text' => $a1
+				
+			];
+			}
+			else {
+				$messages = [
+				'type' => 'text',
+				'text' => 'พิมไม่ถูกต้อง'
 			];
 			}
 			
