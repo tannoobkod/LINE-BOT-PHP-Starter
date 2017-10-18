@@ -24,9 +24,11 @@ if (!is_null($events['events'])) {
 			];
 			}
 			if (strpos($text, 'สั่งหมูฝอย') !== false){
+				$price = filter_var($text, FILTER_SANITIZE_NUMBER_INT);
+				$price = $price*200;
 				$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => 'ยืนยัน ' . $text . '\nราคา '. $price . ' บาท'
 			];
 				$pork_amount =0;
 			}
