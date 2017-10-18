@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
 				'text' => 'หมูฝอย'
 			];
 			}
-			if (substr($text,0,6) =='หมูฝอย'){
+			if (strpos($text, 'สั่งหมูฝอย') !== false){
 				$messages = [
 				'type' => 'text',
 				'text' => $text
@@ -35,7 +35,7 @@ if (!is_null($events['events'])) {
 				$pork = 1;
 				$messages = [
 				'type' => 'text',
-				'text' => substr($text,5)
+				'text' => 'สั่งหมูฝอยพิม สั่งหมูฝอย # กล่อง'
 			];
 			}
 
