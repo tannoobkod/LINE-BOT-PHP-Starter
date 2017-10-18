@@ -5,9 +5,6 @@ $access_token = '5Xu9joQddKbDnD5THhMXxYaNoflVITFW/3GIXFrGEwqKXZkJYbWzYD+nMMeczf0
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
-$menu = 0;
-$pork = 0;
-$pork_amount = 0;
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -20,28 +17,25 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			if ( $text == 'เมนู' && $menu == 0){
+			if ( $text == 'เมนู'){
 				$messages = [
 				'type' => 'text',
-				'text' => $menu	
+				'text' => 'หมูฝอย'
 			];
-				$menu = 1;
 			}
-			if (is_numeric($text) && $pork == 1){
-				$pork_amount = 1;
-				$pork = 0;
+			if (substr($text,0,6) =='หมูฝอย'){
 				$messages = [
 				'type' => 'text',
 				'text' => $text
 			];
 				$pork_amount =0;
 			}
-			if ( $text == 'หมูฝอย' && $menu == 1){
+			if ( $text == 'หมูฝอย'){
 				$menu = 0;
 				$pork = 1;
 				$messages = [
 				'type' => 'text',
-				'text' => 'เอากี่กล่อง'
+				'text' => 'สั่งหมูฝอยพิม หมูฝอย #จำนวน กล่อง '
 			];
 			}
 
