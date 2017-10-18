@@ -25,15 +25,15 @@ if (!is_null($events['events'])) {
 				'text' => 'หมูฝอย'
 			];
 			}
-			if ($a1 = 1){
+			if ($a1 == 1){
 				$a2 = 1;
 				$a1 = 0;
 				$messages = [
 				'type' => 'text',
-				'text' => '$text กล่อง'
+				'text' => '$text'
 			];
 			}
-			if ( $text == 'หมูฝอย' && $a1 = 0){
+			if ( $text == 'หมูฝอย' && $a1 == 0){
 				$a1 = 1;
 				$messages = [
 				'type' => 'text',
