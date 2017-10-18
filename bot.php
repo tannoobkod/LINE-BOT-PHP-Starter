@@ -37,11 +37,11 @@ if (!is_null($events['events'])) {
 				$pork_amount =0;
 			}
 			if ( $text == 'หมูฝอย' && $menu == 1){
-				$menu = 0
+				$menu = 0;
 				$pork = 1;
 				$messages = [
 				'type' => 'text',
-				'text' => $pork
+				'text' => 'เอากี่กล่อง'
 			];
 			}
 
