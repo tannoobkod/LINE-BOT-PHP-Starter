@@ -5,6 +5,8 @@ $access_token = '5Xu9joQddKbDnD5THhMXxYaNoflVITFW/3GIXFrGEwqKXZkJYbWzYD+nMMeczf0
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
+$a1 = 0;
+$a2 = 0;
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -17,12 +19,18 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			if ( $text == 'สวัสดี'){
+			if ( $text == 'เมนู'){
 			$messages = [
 				'type' => 'text',
-				'text' => 'เออ'
+				'text' => 'หมูฝอย/n'
 			];
-
+			}
+			if ( $text == 'หมูฝอย' && $a1 = 0){
+				$a1 = 1;
+				$messages = [
+				'type' => 'text',
+				'text' => 'เอากี่กล่อง'
+			];
 			}
 			
 			// Make a POST Request to Messaging API to reply to sender
