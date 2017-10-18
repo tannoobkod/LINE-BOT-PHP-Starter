@@ -25,6 +25,14 @@ if (!is_null($events['events'])) {
 				'text' => 'หมูฝอย/n'
 			];
 			}
+			if ($a1 = 1){
+				$a2 = 1;
+				$a1 = 0;
+				$messages = [
+				'type' => 'text',
+				'text' => '$text'+'กล่อง'
+			];
+			}
 			if ( $text == 'หมูฝอย' && $a1 = 0){
 				$a1 = 1;
 				$messages = [
@@ -32,6 +40,7 @@ if (!is_null($events['events'])) {
 				'text' => 'เอากี่กล่อง'
 			];
 			}
+			
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
