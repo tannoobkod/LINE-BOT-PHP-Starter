@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 			if ( $text == 'เมนู'){
 				$messages = [
 				'type' => 'text',
-				'text' => 'หมูฝอย'
+				'text' => 'หมูฝอย, ช่องทาติดต่อ, รายละเอียดร้าน'
 			];
 			}
 			if ($text == 'ยืนยันการสั่งซื้อ'){
@@ -46,7 +46,19 @@ if (!is_null($events['events'])) {
 				'text' => 'สั่งหมูฝอยพิม สั่งหมูฝอย # กล่อง'
 			];
 			}
-
+			if ( $text == 'ช่องทางติดต่อ'){
+				$messages = [
+				'type' => 'text',
+				'text' => 'เบอร์โทร:087561XXXX E-Mail: chatwithche@gmail.com'
+			];
+			}
+			if ( $text == 'รายละเอียดร้าน'){
+				$messages = [
+				'type' => 'text',
+				'text' => 'ร้านขายหมูฝอยราคาถูก อร่อย ถูกสุขอนามัย จัดส่งทาง EMS เก็บเงินปลายทางได้
+				สามารถสั่งในนี้ทางไลน์ได้เลยโดยการพิมว่า เมนู'
+			];
+			}
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
