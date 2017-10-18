@@ -35,7 +35,7 @@ if (!is_null($events['events'])) {
 				$pork = 1;
 				$messages = [
 				'type' => 'text',
-				'text' => 'สั่งหมูฝอยพิม หมูฝอย #จำนวน กล่อง '
+				'text' => substr($text,5)
 			];
 			}
 
