@@ -27,24 +27,7 @@ if (!is_null($events['events'])) {
 				'text' => 'หมูฝอย'
 			];
 			}
-			if (is_numeric($text) && $pork == 1){
-				$pork_amount = 1;
-				$pork = 0;
-				$messages = [
-				'type' => 'text',
-				'text' => $text+'กล่อง'
-				$pork_amount =0;
-			];
-			}
-			if ( $text == 'หมูฝอย' && $menu == 1){
-				$menu = 0
-				$pork = 1;
-				$messages = [
-				'type' => 'text',
-				'text' => $pork
-				
-			];
-			}
+
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
