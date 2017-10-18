@@ -24,7 +24,7 @@ if (!is_null($events['events'])) {
 				$menu = 1;
 				$messages = [
 				'type' => 'text',
-				'text' => 'หมูฝอย'	
+				'text' => $menu	
 			];
 			}
 			if (is_numeric($text) && $pork == 1){
