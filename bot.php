@@ -25,12 +25,13 @@ if (!is_null($events['events'])) {
 				'text' => 'หมูฝอย'
 			];
 			}
-			if ($a1 == 1){
+			if (is_numeric($text) && $a1 == 1){
 				$a2 = 1;
 				$a1 = 0;
 				$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => $text+'กล่อง'
+				$a2 =0;
 			];
 			}
 			if ( $text == 'หมูฝอย' && $a1 == 0){
@@ -41,13 +42,6 @@ if (!is_null($events['events'])) {
 				
 			];
 			}
-			else {
-				$messages = [
-				'type' => 'text',
-				'text' => 'พิมไม่ถูกต้อง'
-			];
-			}
-			
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
