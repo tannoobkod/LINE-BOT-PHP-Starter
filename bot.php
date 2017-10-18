@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
 			if ( $text == 'เมนู'){
 			$messages = [
 				'type' => 'text',
-				'text' => 'หมูฝอย/n'
+				'text' => 'หมูฝอย'
 			];
 			}
 			if ($a1 = 1){
@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
 				$a1 = 0;
 				$messages = [
 				'type' => 'text',
-				'text' => '$text'+'กล่อง'
+				'text' => '$text กล่อง'
 			];
 			}
 			if ( $text == 'หมูฝอย' && $a1 = 0){
