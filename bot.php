@@ -5,8 +5,9 @@ $access_token = '5Xu9joQddKbDnD5THhMXxYaNoflVITFW/3GIXFrGEwqKXZkJYbWzYD+nMMeczf0
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
-$a1 = 0;
-$a2 = 0;
+$menu = 0;
+$pork = 0;
+$pork_amount = 0;
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -19,26 +20,28 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			if ( $text == 'เมนู'){
+			if ( $text == 'เมนู' && $menu == 0){
+				$menu = 1;
 			$messages = [
 				'type' => 'text',
 				'text' => 'หมูฝอย'
 			];
 			}
-			if (is_numeric($text) && $a1 == 1){
-				$a2 = 1;
-				$a1 = 0;
+			if (is_numeric($text) && $pork == 1){
+				$pork_amount = 1;
+				$pork = 0;
 				$messages = [
 				'type' => 'text',
 				'text' => $text+'กล่อง'
-				$a2 =0;
+				$pork_amount =0;
 			];
 			}
-			if ( $text == 'หมูฝอย' && $a1 == 0){
-				$a1 = 1;
+			if ( $text == 'หมูฝอย' && $menu == 1){
+				$menu = 0
+				$pork = 1;
 				$messages = [
 				'type' => 'text',
-				'text' => $a1
+				'text' => $pork
 				
 			];
 			}
