@@ -23,12 +23,18 @@ if (!is_null($events['events'])) {
 				'text' => 'หมูฝอย'
 			];
 			}
-			if (strpos($text, 'สั่งหมูฝอย') !== false){
-				$price = filter_var($text, FILTER_SANITIZE_NUMBER_INT);
-				$price = $price*200;
+			if ($text == 'ยืนยันการสั่งซื้อ'){
 				$messages = [
 				'type' => 'text',
-				'text' => 'ยืนยัน ' . $text . '\nราคา '. $price . ' บาท'
+				'text' => 'ยืนยัน จะดำเนินการจัดส่งให้เร็วที่สุด ขอบคุณครับ'
+			];
+			}
+			if (strpos($text, 'สั่งหมูฝอย') !== false){
+				$amount = filter_var($text, FILTER_SANITIZE_NUMBER_INT);
+				$price = $amount*200;
+				$messages = [
+				'type' => 'text',
+				'text' => 'หมูฝอยจำนวน ' . $amount . ' กล่อง ราคารวมทั้งหมด ' . $price .  ' บาท กรุณายืนยันด้วยการพิมว่า ยืนยันการสั่งซื้อ' 
 			];
 				$pork_amount =0;
 			}
