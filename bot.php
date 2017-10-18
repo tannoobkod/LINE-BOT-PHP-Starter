@@ -21,11 +21,11 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			if ( $text == 'เมนู' && $menu == 0){
-				$menu = 1;
 				$messages = [
 				'type' => 'text',
-				'text' => 'หมูฝอย'
+				'text' => 'หมูฝอย'	
 			];
+				$menu = 1;
 			}
 			if (is_numeric($text) && $pork == 1){
 				$pork_amount = 1;
@@ -33,8 +33,8 @@ if (!is_null($events['events'])) {
 				$messages = [
 				'type' => 'text',
 				'text' => $text+'กล่อง'
-				$pork_amount =0;
 			];
+				$pork_amount =0;
 			}
 			if ( $text == 'หมูฝอย' && $menu == 1){
 				$menu = 0
@@ -42,7 +42,6 @@ if (!is_null($events['events'])) {
 				$messages = [
 				'type' => 'text',
 				'text' => $pork
-				
 			];
 			}
 
